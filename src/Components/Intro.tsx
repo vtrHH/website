@@ -8,8 +8,11 @@ import personalPicture from '../assets/20140903-DSC_9007.jpg';
 
 const useStyles = makeStyles({
   container: {
-    textAlign: 'center',
-    margin: '18.5em auto'
+    height: '90vh',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   text: {
     color: '#c2c4c2'
