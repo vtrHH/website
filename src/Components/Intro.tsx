@@ -15,7 +15,8 @@ const useStyles = makeStyles({
     justifyContent: 'center'
   },
   text: {
-    color: '#c2c4c2'
+    color: '#c2c4c2',
+    textAlign: 'center'
   },
   avatar: {
     margin: '0 auto'

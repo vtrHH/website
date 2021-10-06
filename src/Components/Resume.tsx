@@ -11,13 +11,12 @@ import Navbar from './Navbar';
 
 const useStyles = makeStyles({
   mainContainer: {
-    marginTop: '5rem',
-    display: 'flex',
-    justifyContent: 'center'
+    height: '100%',
   },
   pageContainer: {
     textAlign: 'center',
-    marginBottom: '0.5rem'
+    marginBottom: '0.5rem',
+    paddingTop: '5rem'
   }
 });
 
@@ -60,7 +59,11 @@ const Resume = () => {
         >
           <Grid item>
             <IconButton onClick={previousPage} disabled={pageNumber <= 1}>
-              <ArrowBackIosIcon style={{ color: '#c2c4c2' }} />
+              <ArrowBackIosIcon
+                style={{
+                  color: '#c2c4c2'
+                }}
+              />
             </IconButton>
           </Grid>
           <Grid item>

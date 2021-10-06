@@ -21,7 +21,8 @@ import mooseician from '../assets/mooseician.png';
 
 const useStyles = makeStyles({
   mainContainer: {
-    margin: '5rem auto'
+    marginTop: '5rem',
+    height: '100%'
   },
   cardContainer: {
     maxWidth: 345,
@@ -43,7 +44,7 @@ const Projects = () => {
   return (
     <Box className={classes.mainContainer}>
       <Navbar />
-      <Grid container>
+      <Grid container spacing={2}>
         <Grid item xs={12} sm={6} md={4}>
           <Card
             className={classes.cardContainer}
@@ -54,7 +55,7 @@ const Projects = () => {
               image={eyebird}
               alt="EyeBird"
               height="200"
-              style={{ padding: '1rem' }}
+              style={{ padding: '1rem', opacity: '0.7' }}
             />
             <CardContent className={classes.cardContent}>
               <Typography gutterBottom variant="h5" component="div">
@@ -73,12 +74,19 @@ const Projects = () => {
                 <Link
                   href="https://github.com/vtrHH/nature-app"
                   underline="none"
+                  target="_blank"
+                  rel="noopener"
                 >
                   Github
                 </Link>
               </Button>
               <Button variant="outlined">
-                <Link href="https://eyebird.netlify.app/" underline="none">
+                <Link
+                  href="https://eyebird.netlify.app/"
+                  underline="none"
+                  target="_blank"
+                  rel="noopener"
+                >
                   Demo
                 </Link>
               </Button>
@@ -95,7 +103,7 @@ const Projects = () => {
               image={mooseician}
               alt="Mooseician"
               height="200"
-              style={{ padding: '1rem' }}
+              style={{ padding: '1rem', opacity: '0.7' }}
             />
             <CardContent className={classes.cardContent}>
               <Typography gutterBottom variant="h5" component="div">
@@ -114,12 +122,19 @@ const Projects = () => {
                 <Link
                   href="https://github.com/vtrHH/musicians-app"
                   underline="none"
+                  target="_blank"
+                  rel="noopener"
                 >
                   Github
                 </Link>
               </Button>
               <Button variant="outlined">
-                <Link href="https://mooseician.herokuapp.com/" underline="none">
+                <Link
+                  href="https://mooseician.herokuapp.com/"
+                  underline="none"
+                  target="_blank"
+                  rel="noopener"
+                >
                   Demo
                 </Link>
               </Button>
@@ -136,7 +151,7 @@ const Projects = () => {
               image={maskGame}
               alt="Mask Game"
               height="200"
-              style={{ padding: '1rem' }}
+              style={{ padding: '1rem', opacity: '0.7' }}
             />
             <CardContent className={classes.cardContent}>
               <Typography gutterBottom variant="h5" component="div">
@@ -154,6 +169,8 @@ const Projects = () => {
                 <Link
                   href="https://github.com/vtrHH/ironhack-project1-mask-game"
                   underline="none"
+                  target="_blank"
+                  rel="noopener"
                 >
                   Github
                 </Link>
@@ -162,6 +179,8 @@ const Projects = () => {
                 <Link
                   href="https://verena-mask-game.netlify.app/"
                   underline="none"
+                  target="_blank"
+                  rel="noopener"
                 >
                   Demo
                 </Link>

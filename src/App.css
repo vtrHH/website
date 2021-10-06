@@ -5,11 +5,12 @@ html {
 }
 
 body {
-  min-height: 100vh;
+  min-height: '100vh';
   background: url(./assets/coffee-apple.jpg) no-repeat center center fixed;
   -webkit-background: cover;
   -moz-background: cover;
   -o-background: cover;
+  background-size: cover;
 }
 
 .react-pdf__Page__canvas {
