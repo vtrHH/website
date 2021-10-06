@@ -11,3 +11,13 @@ body {
   -moz-background: cover;
   -o-background: cover;
 }
+
+.react-pdf__Page__canvas {
+  margin: 0 auto;
+  width: 90% !important;
+  height: 100% !important;
+  @media (max-width: 30em) {
+    width: 50% !important;
+    height: 100% !important;
+  }
+}
