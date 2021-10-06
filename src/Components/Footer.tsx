@@ -3,8 +3,7 @@ import {
   BottomNavigation,
   BottomNavigationAction,
   Typography,
-  Box,
-  Divider
+  Box
 } from '@mui/material';
 import { LinkedIn, Twitter, GitHub } from '@mui/icons-material';
 import { makeStyles } from '@mui/styles';

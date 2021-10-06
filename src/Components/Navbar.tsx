@@ -31,7 +31,7 @@ const Navbar = () => {
             </Link>
           </Grid>
           <Grid item>
-            <Link variant="h5" color="#c2c4c2" underline="none" href="#">
+            <Link variant="h5" color="#c2c4c2" underline="none" href="/resume">
               Resume
             </Link>
           </Grid>
