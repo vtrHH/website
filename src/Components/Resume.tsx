@@ -8,10 +8,13 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 import testFile from '../assets/test.pdf';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 const useStyles = makeStyles({
   mainContainer: {
-    height: '100%',
+    minHeight: '100vh',
+    position: 'relative',
+    paddingBottom: '3rem'
   },
   pageContainer: {
     textAlign: 'center',
@@ -78,6 +81,7 @@ const Resume = () => {
           </Grid>
         </Grid>
       </Box>
+      <Footer />
     </Box>
   );
 };

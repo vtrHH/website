@@ -10,7 +10,8 @@ const useStyles = makeStyles({
     bottom: '0',
     left: '0',
     backgroundColor: '#292828',
-    paddingTop: '1em'
+    paddingTop: '1em',
+    paddingBottom: '0.5em'
   },
   text: {
     textAlign: 'center',
@@ -61,10 +62,6 @@ const Footer = () => {
             />
           </Grid>
         </Grid>
-
-        <Typography variant="body2" className={classes.text}>
-          Made with ♡, React & Material UI
-        </Typography>
       </Box>
     </>
   );
