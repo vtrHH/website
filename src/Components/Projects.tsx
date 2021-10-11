@@ -12,7 +12,8 @@ import {
   CardMedia,
   Link,
   Button,
-  Typography
+  Typography,
+  Theme
 } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
@@ -21,15 +22,21 @@ import maskGame from '../assets/mask-game.png';
 import mooseician from '../assets/mooseician.png';
 import ownWebsite from '../assets/own_website.png';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme: Theme) => ({
   mainContainer: {
-    marginTop: '5rem',
+    marginTop: theme.spacing(10),
     minHeight: '100vh',
     position: 'relative',
-    paddingBottom: '5rem'
+    paddingBottom: theme.spacing(10)
   },
   gridContainer: {
-    margin: '0 10rem 0 10rem'
+    margin: '0 auto',
+    [theme.breakpoints.up('md')]: {
+      margin: '0 3rem 0 3rem'
+    },
+    [theme.breakpoints.up('lg')]: {
+      margin: '0 10rem 0 10rem'
+    }
   },
   cardContainer: {
     maxWidth: 345,
@@ -37,14 +44,14 @@ const useStyles = makeStyles({
     margin: '1rem auto'
   },
   cardContent: {
-    color: '#c2c4c2',
+    color: theme.palette.primary.main,
     textAlign: 'center'
   },
   buttonGroup: {
     display: 'flex',
     justifyContent: 'center'
   }
-});
+}));
 
 const Projects = () => {
   const classes = useStyles();
@@ -57,7 +64,10 @@ const Projects = () => {
             <Grid item xs={12} sm={6} md={4}>
               <Card
                 className={classes.cardContainer}
-                style={{ backgroundColor: '#292828', borderRadius: '3%' }}
+                sx={{
+                  backgroundColor: 'neutral.main',
+                  borderRadius: '3%'
+                }}
               >
                 <CardMedia
                   component="img"
@@ -105,7 +115,10 @@ const Projects = () => {
             <Grid item xs={12} sm={6} md={4}>
               <Card
                 className={classes.cardContainer}
-                style={{ backgroundColor: '#292828', borderRadius: '3%' }}
+                sx={{
+                  backgroundColor: 'neutral.main',
+                  borderRadius: '3%'
+                }}
               >
                 <CardMedia
                   component="img"
@@ -153,7 +166,10 @@ const Projects = () => {
             <Grid item xs={12} sm={6} md={4}>
               <Card
                 className={classes.cardContainer}
-                style={{ backgroundColor: '#292828', borderRadius: '3%' }}
+                sx={{
+                  backgroundColor: 'neutral.main',
+                  borderRadius: '3%'
+                }}
               >
                 <CardMedia
                   component="img"
@@ -191,7 +207,10 @@ const Projects = () => {
             <Grid item xs={12} sm={6} md={4}>
               <Card
                 className={classes.cardContainer}
-                style={{ backgroundColor: '#292828', borderRadius: '3%' }}
+                sx={{
+                  backgroundColor: 'neutral.main',
+                  borderRadius: '3%'
+                }}
               >
                 <CardMedia
                   component="img"

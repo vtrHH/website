@@ -1,32 +1,26 @@
 import React from 'react';
-import { Typography, Box, Grid } from '@mui/material';
+import { Box, Grid, Button, Theme } from '@mui/material';
 import { LinkedIn, Twitter, GitHub } from '@mui/icons-material';
 import { makeStyles } from '@mui/styles';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme: Theme) => ({
   container: {
     width: '100%',
     position: 'absolute',
     bottom: '0',
     left: '0',
-    backgroundColor: '#292828',
-    paddingTop: '1em',
-    paddingBottom: '0.5em'
-  },
-  text: {
-    textAlign: 'center',
-    color: '#c2c4c2',
-    paddingTop: '0.5em',
-    paddingBottom: '0.5em'
+    backgroundColor: theme.palette.neutral.main,
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(1)
   },
   clickableIcon: {
-    color: '#c2c4c2',
+    color: theme.palette.primary.main,
     fontSize: '3rem',
     '&:hover': {
       color: '#ffffff'
     }
   }
-});
+}));
 
 const Footer = () => {
   const classes = useStyles();

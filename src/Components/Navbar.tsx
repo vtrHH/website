@@ -1,13 +1,13 @@
 import React from 'react';
 
 import { makeStyles } from '@mui/styles';
-import { AppBar, Toolbar, Link, Grid } from '@mui/material';
+import { AppBar, Toolbar, Link, Grid, Theme } from '@mui/material';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme: Theme) => ({
   navbar: {
-    backgroundColor: '#292828'
+    backgroundColor: theme.palette.neutral.main
   }
-});
+}));
 
 const Navbar = () => {
   const classes = useStyles();
@@ -16,14 +16,14 @@ const Navbar = () => {
       <Toolbar className={classes.navbar}>
         <Grid container spacing={3}>
           <Grid item>
-            <Link variant="h5" color="#c2c4c2" underline="none" href="/">
+            <Link variant="h5" color="primary.main" underline="none" href="/">
               Home
             </Link>
           </Grid>
           <Grid item>
             <Link
               variant="h5"
-              color="#c2c4c2"
+              color="primary.main"
               underline="none"
               href="/projects"
             >
@@ -31,7 +31,12 @@ const Navbar = () => {
             </Link>
           </Grid>
           <Grid item>
-            <Link variant="h5" color="#c2c4c2" underline="none" href="/resume">
+            <Link
+              variant="h5"
+              color="primary.main"
+              underline="none"
+              href="/resume"
+            >
               Resume
             </Link>
           </Grid>

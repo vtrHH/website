@@ -1,12 +1,12 @@
 import React from 'react';
 import Typed from 'react-typed';
 
-import { Avatar, Box, Typography } from '@mui/material';
+import { Avatar, Box, Typography, Theme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
 import personalPicture from '../assets/20140903-DSC_9007.jpg';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme: Theme) => ({
   container: {
     height: '90vh',
     display: 'flex',
@@ -15,13 +15,13 @@ const useStyles = makeStyles({
     justifyContent: 'center'
   },
   text: {
-    color: '#c2c4c2',
+    color: theme.palette.primary.main,
     textAlign: 'center'
   },
   avatar: {
-    margin: '0 auto'
+    margin: '1.5rem auto'
   }
-});
+}));
 
 const Intro = () => {
   const classes = useStyles();
