@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grid, Button, Theme, Link } from '@mui/material';
+import { Box, Grid, Theme, Link } from '@mui/material';
 import { LinkedIn, Twitter, GitHub } from '@mui/icons-material';
 import { makeStyles } from '@mui/styles';
 
