@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grid, Button, Theme } from '@mui/material';
+import { Box, Grid, Button, Theme, Link } from '@mui/material';
 import { LinkedIn, Twitter, GitHub } from '@mui/icons-material';
 import { makeStyles } from '@mui/styles';
 
@@ -19,6 +19,15 @@ const useStyles = makeStyles((theme: Theme) => ({
     '&:hover': {
       color: '#ffffff'
     }
+  },
+  footerLink: {
+    color: theme.palette.primary.main,
+    '&:hover': {
+      color: '#ffffff',
+      textDecoration: 'underline'
+    },
+    display: 'flex',
+    justifyContent: 'center'
   }
 }));
 
@@ -27,7 +36,7 @@ const Footer = () => {
   return (
     <>
       <Box className={classes.container}>
-        <Grid container justifyContent="center" spacing={5}>
+        <Grid container justifyContent="center" spacing={3}>
           <Grid item>
             <LinkedIn
               className={classes.clickableIcon}
@@ -56,6 +65,15 @@ const Footer = () => {
             />
           </Grid>
         </Grid>
+        <Link
+          variant="caption"
+          color="primary.main"
+          underline="none"
+          href="/impressum-datenschutz"
+          className={classes.footerLink}
+        >
+          Impressum & Datenschutz
+        </Link>
       </Box>
     </>
   );
