@@ -55,6 +55,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 const Projects = () => {
   const classes = useStyles();
+
   return (
     <>
       <Box className={classes.mainContainer}>
