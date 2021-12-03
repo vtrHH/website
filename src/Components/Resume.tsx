@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
 
 import { makeStyles } from '@mui/styles';
@@ -9,12 +10,13 @@ import {
   IconButton,
   Theme,
   useTheme,
-  useMediaQuery
+  useMediaQuery,
+  Button
 } from '@mui/material';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
-import testFile from '../assets/test.pdf';
+import CV from '../assets/CV_VerenaTraub.pdf';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
@@ -29,11 +31,15 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   pageContainer: {
     textAlign: 'center',
-    marginBottom: theme.spacing(1),
+    marginBottom: theme.spacing(0),
     [theme.breakpoints.down('sm')]: {
       marginBottom: 0
     },
     paddingTop: theme.spacing(11)
+  },
+  downloadLink: {
+    textDecoration: 'none',
+    color: theme.palette.primary.main
   }
 }));
 
@@ -67,44 +73,73 @@ const Resume = () => {
       <Navbar />
       {isMobile ? (
         <Box className={classes.pageContainer}>
-          <Document file={testFile} onLoadSuccess={onDocumentLoaded}>
+          <Document file={CV} onLoadSuccess={onDocumentLoaded}>
             {Array.from(new Array(numPages), (el, index) => (
               <Page key={`page_${index + 1}`} pageNumber={index + 1} />
             ))}
           </Document>
+          <Button variant="outlined">
+            <Link
+              to={CV}
+              target="_blank"
+              download
+              className={classes.downloadLink}
+            >
+              Download CV
+            </Link>
+          </Button>
         </Box>
       ) : (
-        <Box>
+        <>
           <Box className={classes.pageContainer}>
-            <Typography variant="body1" sx={{ color: 'primary.main' }}>
-              Page {pageNumber || (numPages ? 1 : '--')} of {numPages || '--'}
-            </Typography>
+            <Box>
+              <Typography
+                variant="body1"
+                sx={{ color: 'primary.main', paddingBottom: '1em' }}
+              >
+                Page {pageNumber || (numPages ? 1 : '--')} of {numPages || '--'}
+              </Typography>
+            </Box>
+            <Grid
+              container
+              spacing={3}
+              direction="row"
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Grid item>
+                <IconButton onClick={previousPage} disabled={pageNumber <= 1}>
+                  <ArrowBackIosIcon sx={{ color: 'primary.main' }} />
+                </IconButton>
+              </Grid>
+              <Grid item>
+                <Document file={CV} onLoadSuccess={onDocumentLoaded}>
+                  <Page pageNumber={pageNumber} />
+                  <Button variant="outlined" sx={{ marginBottom: '10em' }}>
+                    <Link
+                      to={CV}
+                      target="_blank"
+                      download
+                      className={classes.downloadLink}
+                    >
+                      Download CV
+                    </Link>
+                  </Button>
+                </Document>
+              </Grid>
+              <Grid item>
+                <IconButton
+                  onClick={nextPage}
+                  disabled={pageNumber >= numPages}
+                >
+                  <ArrowForwardIosIcon sx={{ color: 'primary.main' }} />
+                </IconButton>
+              </Grid>
+            </Grid>
           </Box>
-          <Grid
-            container
-            spacing={3}
-            direction="row"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Grid item>
-              <IconButton onClick={previousPage} disabled={pageNumber <= 1}>
-                <ArrowBackIosIcon sx={{ color: 'primary.main' }} />
-              </IconButton>
-            </Grid>
-            <Grid item>
-              <Document file={testFile} onLoadSuccess={onDocumentLoaded}>
-                <Page pageNumber={pageNumber} />
-              </Document>
-            </Grid>
-            <Grid item>
-              <IconButton onClick={nextPage} disabled={pageNumber >= numPages}>
-                <ArrowForwardIosIcon sx={{ color: 'primary.main' }} />
-              </IconButton>
-            </Grid>
-          </Grid>
-        </Box>
+        </>
       )}
+
       <Footer />
     </Box>
   );
