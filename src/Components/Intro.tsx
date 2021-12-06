@@ -27,31 +27,29 @@ const Intro = () => {
   const classes = useStyles();
   return (
     <Box className={classes.container}>
-      {personalPicture && (
-        <>
-          <Avatar
-            className={classes.avatar}
-            style={{ width: 200, height: 200 }}
-            src={personalPicture}
-            alt="Verena Traub"
+      <>
+        <Avatar
+          className={classes.avatar}
+          style={{ width: 200, height: 200 }}
+          src={personalPicture}
+          alt="Verena Traub"
+        />
+        <Typography variant="h4" className={classes.text}>
+          Verena Traub
+        </Typography>
+        <br />
+        <Typography variant="h5" className={classes.text}>
+          <Typed
+            strings={[
+              'Passionate about #technology, #agile, #innovation',
+              'Working in HR and TechRecruiting for many years, now shifting careers to become a Developer.'
+            ]}
+            typeSpeed={45}
+            backSpeed={60}
+            loop
           />
-          <Typography variant="h4" className={classes.text}>
-            Verena Traub
-          </Typography>
-          <br />
-          <Typography variant="h5" className={classes.text}>
-            <Typed
-              strings={[
-                'Passionate about #technology, #agile, #innovation',
-                'Working in HR & TechRecruiting for many years, now shifting careers to become a Developer.'
-              ]}
-              typeSpeed={40}
-              backSpeed={60}
-              loop
-            />
-          </Typography>
-        </>
-      )}
+        </Typography>
+      </>
     </Box>
   );
 };
