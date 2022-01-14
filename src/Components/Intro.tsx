@@ -42,7 +42,7 @@ const Intro = () => {
           <Typed
             strings={[
               'Passionate about #technology, #agile, #innovation',
-              'Working in HR and TechRecruiting for many years, now shifting careers to become a Developer.'
+              'Working in HR and TechRecruiting for many years, now shifted careers and became a Developer / Cloud Engineer.'
             ]}
             typeSpeed={45}
             backSpeed={60}
